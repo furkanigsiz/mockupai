@@ -33,3 +33,12 @@ export const base64ToFile = (base64: string, filename: string, mimeType: string 
     const blob = new Blob([byteArray], { type: mimeType });
     return new File([blob], filename, { type: mimeType });
 };
+
+export const downloadImage = (base64Image: string, fileName: string) => {
+    const link = document.createElement('a');
+    link.href = `data:image/png;base64,${base64Image}`;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };

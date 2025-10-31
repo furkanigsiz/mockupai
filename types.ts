@@ -32,3 +32,12 @@ export interface Project {
 }
 
 export type AppMode = 'scene' | 'product';
+
+export type ProductCategory = 'Apparel' | 'Home Goods' | 'Print' | 'Tech';
+
+export interface ProductTemplate {
+  id: string;
+  name: string;
+  category: ProductCategory;
+  imageUrl: string;
+}
